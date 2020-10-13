@@ -1,0 +1,78 @@
+
+<table mat-table matSort class="mat-elevation-z8" [dataSource]="_getDataSource" multiTemplateDataRows>
+
+    <!-- The content that is showed when the `dataSource` is not empty. -->
+    <ng-container *ngFor="let column of content.columnsObjectProperty; let pos = index" [matColumnDef]="column">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header [ngStyle]="_createCssStylesForHeader(pos)">
+            {{ content.columnsHeaderText[pos] }}
+        </th>
+
+        <td mat-cell [ngClass]="content.createCssClassesForRow(element)" *matCellDef="let element" [ngStyle]="_createCssStylesForCell(pos)">
+            <!-- Adds the notification icon in the first column if there is 'version to review'. -->
+            <mat-icon *ngIf="pos == 0 && element[content.columnsObjectProperty[2]]" class="mat-cell-mat-icon">new_releases</mat-icon>
+            <!-- Adds the cell text if is not the third column. -->
+            <ng-container *ngIf="pos != 2">{{ element[column] }}</ng-container>
+            <!-- Adds the view and edit buttons in the third column. -->
+            <div *ngIf="pos == 2" class="div-mat-button-actions">
+                <ng-container *ngIf="content.actions">
+                    <button 
+                        *ngFor="let action of content.actions"
+                        mat-icon-button class="div-mat-button" 
+                        [attr.aria-label]="action.tooltip" 
+                        (click)="navigateTo(action.route, element)"
+                        matTooltip="{{ action.tooltip }}"
+                    >
+                        <mat-icon>{{ action.icon }}</mat-icon>
+                    </button>
+                </ng-container>
+                 
+                <!-- <button mat-icon-button class="div-mat-button" [attr.aria-label]="'Show the data'" (click)="navigateTo(element[content.propertyNameToIdentify], element)">
+                    <mat-icon>description</mat-icon>
+                </button>
+                <button mat-icon-button class="div-mat-button" [attr.aria-label]="'Edit the data'" (click)="navigateTo('edit', element)">
+                    <mat-icon>edit</mat-icon>
+                </button> -->
+
+            </div>
+        </td>
+    </ng-container>
+
+    <!-- The `otherInformation` represents the content that is showed when the `dataSource` is empty 
+         or the `dataSource` is loading. The information row is made up of this one column that spans 
+         across all columns. -->
+    <ng-container [matColumnDef]="'otherInformation'">
+        <td mat-cell *matCellDef="let element" [attr.colspan]="content.columnsObjectProperty.length">
+            <ng-container *ngIf="isLoading; then thenTemplate_IsLoading; else elseTemplate_IsEmpty"></ng-container>
+            
+            <ng-template #thenTemplate_IsLoading>
+                <mat-progress-spinner class="loading-table-information" mode="indeterminate"></mat-progress-spinner>
+            </ng-template>
+
+            <ng-template #elseTemplate_IsEmpty>
+                <div class="empty-table-information">There is not any data source!</div>
+            </ng-template>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="content.columnsObjectProperty; sticky: true"></tr>
+    <!-- When it is `loading`, it is `empty`, too. -->
+    <ng-container *ngIf="isEmpty; then thenTemplate_OtherInformation; else elseTemplate_IsNotEmpty"></ng-container>
+
+    <ng-template #thenTemplate_OtherInformation>
+        <tr mat-row class="row-other-information" *matRowDef="let row; columns: ['otherInformation']"></tr>
+    </ng-template>
+
+    <ng-template #elseTemplate_IsNotEmpty>
+        <tr mat-row class="row-data" *matRowDef="let row; columns: content.columnsObjectProperty;" (click)="selectRow(row)"></tr>
+    </ng-template>
+
+</table>
+
+<mat-paginator
+    [length]="content.length"
+    [pageIndex]="content.pageIndex"
+    [pageSize]="content.pageSize"
+    [pageSizeOptions]="content.pageSizeOptions"
+    [hidePageSize]="content.hidePageSize"
+    [showFirstLastButtons]="content.showFirstLastButtons">
+</mat-paginator>

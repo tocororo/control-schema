@@ -1,0 +1,22 @@
+
+<!-- TODO: En dependencia del valor de `appearance`, se aplican las clases CSS para lograr la apariencia deseada. 
+     Actualmente, `appearance = 'outline'` es el único que está hecho. -->
+<fieldset class="container-simple-form-field" [formGroup]="content.formSection" [attr.aria-label]="content.ariaLabel">
+    <legend class="container-simple-form-field-legend">{{ content.label }}</legend>
+
+    <ng-template get-view-container></ng-template>
+
+    <ng-container *ngIf="content.isDynamic">
+        <button mat-raised-button color="primary" (click)="addToFormArray()">
+            <!-- <mat-icon>add box</mat-icon> -->
+            <mat-icon>add_circle</mat-icon>
+            Add new item
+        </button>
+        <button mat-raised-button color="primary" [disabled]="!canRemoveFromFormArray" (click)="clearFormArray()">
+            <!-- <mat-icon>remove box</mat-icon> -->
+            <mat-icon>remove_circle</mat-icon>
+            Clear all
+        </button>
+    </ng-container>
+
+</fieldset>

@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "control-schema": [
+        "dist/control-schema"
+      ],
+      "control-schema/*": [
+        "dist/control-schema/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
