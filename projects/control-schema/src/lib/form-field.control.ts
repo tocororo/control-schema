@@ -221,78 +221,6 @@ export class HintValue
 }
 
 /**
- * This enum is deprecated. 
- * Represents a form field type. 
- */
-export enum FormFieldType
-{
-    /** A button control. */
-    action_button = 'action_button',
-
-
-
-    /** A container control that is showed as a panel. */
-    container_panel = 'container_panel',
-
-    /** A container control that is showed very simple. */
-    container_simple = 'container_simple',
-
-
-
-    /** A container control that allows the writing of a name of something in different language. */
-    container_label_diff_lang = 'container_label_diff_lang',
-
-
-
-    /** A text control. */
-    text = 'text',
-
-    /** A textarea control. */
-    textarea = 'textarea',
-
-    /** A datapicker control. */
-    datepicker = 'datepicker',
-
-    /** A checkbox control. */
-    checkbox = 'checkbox',
-
-    /** A url control. */
-    url = 'url',
-
-    /** An email control. */
-    email = 'email',
-
-    /** An identifier control. */
-    identifier = 'identifier',
-
-    /** An issn control. */
-    issn = 'issn',
-
-    /** A rnps control. */
-    rnps = 'rnps',
-
-    /** A vocabulary control. */
-    vocabulary = 'vocabulary',
-
-    vocabulary_tree = 'toco-vocabulary-tree',
-
-    /** A term parent control. */
-    term_parent = 'term_parent',
-
-    /** A select control. */
-    select = 'select',
-
-    /** A select control. */
-    select_expr = 'select_expr',
-
-    /** A select with a filter control. */
-    select_filter = 'select_filter',
-
-    /** A select with a filter control. */
-    select_tree = 'select_tree'
-}
-
-/**
  * A base interface that represents the content of a `FormFieldControl`. 
  */
 export interface FormFieldContent
@@ -369,14 +297,6 @@ export interface FormFieldContent
     value?: any;
 
 
-
-    /**
-     * This `type` field is deprecated, you must use the `controlType` field. 
-     * Returns the control's type that is used to create the control. 
-     * Implementation notes: 
-     *  - It must be specified; otherwise, an exception is thrown. 
-     */
-    type?: FormFieldType;
 
     /**
      * Returns the control's type that is used to create the control. 
