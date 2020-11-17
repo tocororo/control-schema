@@ -19,12 +19,8 @@
       "dom"
     ],
     "paths": {
-      "control-schema": [
-        "dist/control-schema"
-      ],
-      "control-schema/*": [
-        "dist/control-schema/*"
-      ]
+      "control-schema": ["dist/control-schema"],
+      "control-schema/*": ["dist/control-schema/*"]
     }
   },
   "angularCompilerOptions": {
