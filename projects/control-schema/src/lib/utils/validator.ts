@@ -27,7 +27,8 @@ export class ExtraValidators
     /**
      * @description
      * Validator that requires the length of the control's value to be equal to the 
-     * provided length. This validator is used with Reactive Forms; if you want to use 
+     * provided length. It assumes that the control's value is of string type. 
+     * This validator is used with Reactive Forms; if you want to use 
      * an equivalent validator with Template-driven Form you must use the `equalLength` attribute. 
      *
      * @usageNotes
@@ -137,9 +138,9 @@ export class ExtraValidators
 
     /**
      * @description
-     * Validator that requires the control's value pass an ISSN validation test (confirm the check digit). 
+     * Validator that requires the control's value passes an ISSN validation test (confirms the check digit). 
      * The ISSN value is divided in two groups, therefore the control has two child controls and they are 
-     * arguments of the validator method. 
+     * arguments of the validator method. It assumes that the control's value is of string type. 
      * The validator exists only as a function and not as a directive. 
      *
      * @usageNotes

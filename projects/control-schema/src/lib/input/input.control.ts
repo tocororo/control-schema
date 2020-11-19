@@ -313,17 +313,6 @@ export abstract class InputControl extends FormFieldControl
         }
     }
 
-	/**
-	 * Returns the control's default value. 
-     * This function can be overwrite in the derived class. 
-	 */
-    public get getDefaultValue(): any
-    {
-        /* By default, its implementation is returning the empty string. */
-
-        return '';
-    }
-
     /**
      * Returns an error string if the control is in an error state; otherwise, empty string. 
      * This function can be overwrite in the derived class. 

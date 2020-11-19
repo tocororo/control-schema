@@ -47,12 +47,4 @@ export class InputIssnComponent extends InputControl implements OnInit
         /* Sets the default values. */
 		this.init(IssnType_Abbreviation.ISSN, true, true);
 	}
-
-	/**
-	 * Returns the control's default value. 
-	 */
-    public get getDefaultValue(): any
-    {
-		return IssnValue.defaultIssnValue;
-    }
 }

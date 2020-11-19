@@ -47,7 +47,6 @@ export class InputIssnInternalComponent implements OnDestroy, IInternalComponent
 	private static readonly _controlNameWithDash: string = 'input-issn';
 
 	
-
 	/**
 	 * Tracks the value and validity state of the internal control that contains the code.
 	 */

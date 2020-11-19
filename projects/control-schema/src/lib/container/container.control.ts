@@ -540,13 +540,14 @@ export abstract class ContainerControl extends FormFieldControl
 	 */
 	protected initValue(): void
 	{
-        /* It does not need to do something because the child controls are already initialized. */
+        /* It does not need to do something because the child controls are already initialized. 
+        The 'this.content.formSection' already has the correct value. */
 
         // /* In this way, checks if the specified `content.value` is correct. */
-        // this.content.formControl.setValue(this.content.value);
+        // this.content.formSection.setValue(this.content.value);
 
         // /* Marks the control as `touched`. */
-        // this.content.formControl.markAsTouched({
+        //  this.content.formSection.markAsTouched({
         //     onlySelf: true
         // });
     }

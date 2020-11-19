@@ -49,10 +49,17 @@ export class InputRnpsComponent extends InputControl implements OnInit
 
     public ngOnInit(): void
     {
-        this._codeOldValue = this.content.formControl.value;
-
         /* Sets the default values. */
+
         this.init(RnpsValue.rnps_Abbreviation, true, true);
+
+        if (typeof this.content.value !== 'string')
+        {
+            throw new Error(`For the '${ this.content.name }' control, the 'content.value' value must be of string type.`);
+        }
+
+       /* The '_codeOldValue' must be set after the 'content.formControl.value' is set. */
+       this._codeOldValue = this.content.formControl.value;
     }
 
     /**
@@ -106,7 +113,7 @@ export class InputRnpsComponent extends InputControl implements OnInit
         }
         else
         {
-            /* Updates the old values. */
+            /* Updates the old value. */
             this._codeOldValue = this.content.formControl.value;
         }
     }

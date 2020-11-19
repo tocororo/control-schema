@@ -117,15 +117,8 @@ export abstract class ActionControl extends FormFieldControl
 	 */
 	protected initValue(): void
 	{
-        /* It does not need to do something because the child controls are already initialized. */
-
-        // /* In this way, checks if the specified `content.value` is correct. */
-        // this.content.formControl.setValue(this.content.value);
-
-        // /* Marks the control as `touched`. */
-        // this.content.formControl.markAsTouched({
-        //     onlySelf: true
-        // });
+        /* It does not need to do something because an 'ActionControl' does not have a value. 
+        The value of an 'ActionControl' is its 'content.label' field. */
     }
 
     /**

@@ -451,7 +451,7 @@ export abstract class FormFieldControl
         /************************** Internal control properties. **************************/
         if (this.content.textAlign == undefined) this.content.textAlign = TextAlign.left;
         if (this.content.ariaLabel == undefined) this.content.ariaLabel = label;
-        if (this.content.value != undefined)  /* It does not set the default value here (does not call `getDefaultValue` method here) because in this way it is more consistent. */
+        if (this.content.value != undefined)
         {
             /* It also checks if the specified `content.value` is correct. */
             this.initValue();
