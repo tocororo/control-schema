@@ -139,7 +139,7 @@ export abstract class InputControl extends FormFieldControl
      */
     public static getFormControlByDefault(): FormControl
     {
-        const res: FormControl = new FormControl('', [ ]);
+        let res: FormControl = new FormControl('', [ ]);
 
         return res;
     }

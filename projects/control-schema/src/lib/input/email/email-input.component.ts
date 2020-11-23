@@ -25,7 +25,7 @@ export class InputEmailComponent extends InputControl implements OnInit
      */
     public static getFormControlByDefault(): FormControl
     {
-        const res: FormControl = new FormControl('', [
+        let res: FormControl = new FormControl('', [
             Validators.email
         ]);
 

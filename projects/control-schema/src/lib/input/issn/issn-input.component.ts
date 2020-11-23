@@ -32,7 +32,7 @@ export class InputIssnComponent extends InputControl implements OnInit
     public static getFormControlByDefault(): FormControl
     {
 		//TODO: Maybe, it will change. 
-		const res: FormControl = new FormControl('', [ ]);
+		let res: FormControl = new FormControl('', [ ]);
 		
 		return res;
     }
