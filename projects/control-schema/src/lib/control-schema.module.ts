@@ -44,7 +44,6 @@ import { ContainerSimpleComponent } from './container/simple/simple-container.co
 import { InputEmailComponent } from './input/email/email-input.component';
 import { InputIdentifierComponent } from './input/identifier/identifier-input.component';
 import { InputIssnComponent } from './input/issn/issn-input.component';
-import { InputIssnInternalComponent } from './input/issn/issn-internal/issn-input-internal.component';
 import { InputRnpsComponent } from './input/rnps/rnps-input.component';
 import { InputSelectComponent } from './input/select/select-input.component';
 import { InputTextComponent } from './input/text/text-input.component';
@@ -60,7 +59,6 @@ import { EqualLengthDirective } from './utils/validator';
 		InputEmailComponent,
 		InputIdentifierComponent,
 		InputIssnComponent,
-		InputIssnInternalComponent,
 		InputRnpsComponent,
 		InputSelectComponent,
 		InputTextComponent,
