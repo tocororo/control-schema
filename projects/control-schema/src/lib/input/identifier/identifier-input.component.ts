@@ -6,7 +6,7 @@ import { InputControl } from '../input.control';
 import { IdentifierValue } from './identifier-value';
 
 /**
- * Represents a control that allows the writing of a identifier. 
+ * Represents a control that allows the writing of an identifier. 
  */
 @Component({
     selector: 'input-identifier',
